@@ -24,20 +24,20 @@ Select ONE Additional Feature to Add
     <h1>Quiz About [Me]</h1>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="donut-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+         What is my favorite thing to munch?
+        <select id="donut-answer">
+          <option value="donut1">Paris Baguette Snowman donut</option>
+          <option value="donut2">Paris Baguette King Cream donut</option>
+          <option value="donut3">Paris baguette Cereal donut</option>
+          <option value="donut4">paris baguette Valentine donut</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Munchy Answer</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="donut-result" class="result-box">
+      <p id="donut-text"></p>
     </div>
     <hr />
     <!-- Book Question -->
@@ -53,42 +53,76 @@ Select ONE Additional Feature to Add
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
-    <div id="book-result">
+    <div id="book-result" class="result-box">
       <p id="book-text"></p>
     </div>
+
+    <section class="images">
+      <h2>Three Things I Love</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="https://via.placeholder.com/300x180?text=Favorite+Book" alt="Favorite book illustration" />
+          <figcaption>Favorite book</figcaption>
+        </figure>
+        <figure>
+          <img src="https://via.placeholder.com/300x180?text=Favorite+Movie" alt="Favorite movie illustration" />
+          <figcaption>Favorite movie</figcaption>
+        </figure>
+        <figure>
+          <img src="https://via.placeholder.com/300x180?text=Favorite+Snack" alt="Favorite snack illustration" />
+          <figcaption>Favorite snack</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      
-      //========================Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
-        event.preventDefault();
+      $(document).ready(function () {
+        // hide results until an answer is submitted
+        $("#donut-result").hide();
+        $("#book-result").hide();
 
-        var $answer = $("#movie-answer");
-        var answer = $answer.val();
+        //========================Movie Question jQuery Code
+        $("#donut-form").on("submit", function (event) {
+          event.preventDefault();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
-        } 
-        else {
-          $("#movie-text").text("Try Again!");
-        }
+          var $answer = $("#donut-answer");
+          var answer = $answer.val();
+
+          if (answer === "donut1") {
+            $("#donut-text").text("YESSSS! You picked the lucky choice.");
+            $("#donut-result")
+              .css("background-color", "#c8f4ff")
+              .slideDown("slow")
+              .animate({ paddingLeft: "24px", fontSize: "26px" }, 400);
+          } else {
+            $("#donut-text").text("Try Again! Keep guessing.");
+            $("#donut-result")
+              .css("background-color", "#ffd4d4")
+              .slideDown("slow");
+          }
+        });
+
+        //=======================Book Question jQuery Code
+        $("#book-form").on("submit", function (event) {
+          event.preventDefault();
+
+          var $answer = $("#book-answer");
+          var answer = $answer.val();
+
+          if (answer === "book1") {
+            $("#book-text").text("YESSSS! That is my favorite book.");
+            $("#book-result")
+              .css({ width: "60%", opacity: 0, display: "block", backgroundColor: "#d1ffd6" })
+              .animate({ width: "100%", opacity: 1 }, 800);
+          } else {
+            $("#book-text").text("Try Again! You are close.");
+            $("#book-result")
+              .css({ width: "80%", opacity: 0, display: "block", backgroundColor: "#fff5b8" })
+              .animate({ width: "100%", opacity: 1 }, 800);
+          }
+        });
       });
-
-      //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
-        event.preventDefault();
-
-        var $answer = $("#book-answer");
-        var answer = $answer.val();
-
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
-        } 
-        else {
-          $("#book-text").text("Try Again!");
-        }
-      });
-      
     </script>
   </body>
 
