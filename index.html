@@ -41,35 +41,35 @@ Select ONE Additional Feature to Add
     </div>
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="hubby-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        Who's my husband?
+        <select id="hubby-answer">
+          <option value="hubby1">Time skip Zuko</option>
+          <option value="hubby2">Time skip Aang</option>
+          <option value="hubby3">Uncle Iroh</option>
+          <option value="hubby4">Time skip Sokka</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Hubby Answer</button>
     </form>
-    <div id="book-result" class="result-box">
-      <p id="book-text"></p>
+    <div id="hubby-result" class="result-box">
+      <p id="hubby-text"></p>
     </div>
 
     <section class="images">
       <h2>Three Things I Love</h2>
       <div class="image-grid">
         <figure>
-          <img src="https://m.media-amazon.com/images/M/MV5BYjA2NzhlMDItNWRmZC00MzRjLWE3ZjAtZjBlZDAwOWY2ODdjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Favorite book illustration" />
+          <img src="https://m.media-amazon.com/images/M/MV5BYjA2NzhlMDItNWRmZC00MzRjLWE3ZjAtZjBlZDAwOWY2ODdjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"  />
           <figcaption>Arcane</figcaption>
         </figure>
         <figure>
-          <img src="https://via.placeholder.com/300x180?text=Favorite+Movie" alt="Favorite movie illustration" />
-          <figcaption>Tradej Joe Takis</figcaption>
+          <img src="https://e.snmc.io/lk/f/x/b7b87a74f7ff56c93ca380e99a5d4f00/10959333"  />
+          <figcaption>Tradej The Walking Dead Game</figcaption>
         </figure>
         <figure>
-          <img src="https://via.placeholder.com/300x180?text=Favorite+Snack" alt="Favorite snack illustration" />
+          <img src="https://via.placeholder.com/300x180?text=Favorite+Snack"  />
           <figcaption>Redbull</figcaption>
         </figure>
       </div>
@@ -78,11 +78,9 @@ Select ONE Additional Feature to Add
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        // hide results until an answer is submitted
         $("#donut-result").hide();
-        $("#book-result").hide();
-
-        //========================Movie Question jQuery Code
+        $("#hubby-result").hide();
+        
         $("#donut-form").on("submit", function (event) {
           event.preventDefault();
 
@@ -90,34 +88,34 @@ Select ONE Additional Feature to Add
           var answer = $answer.val();
 
           if (answer === "donut1") {
-            $("#donut-text").text("YESSSS! You picked the lucky choice.");
+            $("#donut-text").text("OH YEAAHHH U KNOW WHATSSUUUP");
             $("#donut-result")
               .css("background-color", "#c8f4ff")
               .slideDown("slow")
               .animate({ paddingLeft: "24px", fontSize: "26px" }, 400);
           } else {
-            $("#donut-text").text("Try Again! Keep guessing.");
+            $("#donut-text").text("naw dawg, try again);
             $("#donut-result")
               .css("background-color", "#ffd4d4")
               .slideDown("slow");
           }
         });
 
-        //=======================Book Question jQuery Code
-        $("#book-form").on("submit", function (event) {
+       
+        $("#hubby-form").on("submit", function (event) {
           event.preventDefault();
 
-          var $answer = $("#book-answer");
+          var $answer = $("#hubby-answer");
           var answer = $answer.val();
 
-          if (answer === "book1") {
-            $("#book-text").text("YESSSS! That is my favorite book.");
-            $("#book-result")
+          if (answer === "hubby1") {
+            $("#hubby-text").text("yes.");
+            $("#hubby-result")
               .css({ width: "60%", opacity: 0, display: "block", backgroundColor: "#d1ffd6" })
               .animate({ width: "100%", opacity: 1 }, 800);
           } else {
-            $("#book-text").text("Try Again! You are close.");
-            $("#book-result")
+            $("#hubby-text").text("like yes, but not the right yes, try again");
+            $("#hubby-result")
               .css({ width: "80%", opacity: 0, display: "block", backgroundColor: "#fff5b8" })
               .animate({ width: "100%", opacity: 1 }, 800);
           }
