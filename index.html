@@ -65,13 +65,14 @@ Select ONE Additional Feature to Add
           <figcaption>Arcane</figcaption>
         </figure>
         <figure>
-          <img src="https://e.snmc.io/lk/f/x/b7b87a74f7ff56c93ca380e99a5d4f00/10959333"  />
-          <figcaption>Tradej The Walking Dead Game</figcaption>
+            <img src="https://m.media-amazon.com/images/I/71oYp0Y7bxL._AC_UF1000,1000_QL80_.jpg"  />
+          <figcaption>Attack on Titan</figcaption>
         </figure>
         <figure>
-          <img src="https://via.placeholder.com/300x180?text=Favorite+Snack"  />
-          <figcaption>Redbull</figcaption>
+          <img src="https://e.snmc.io/lk/f/x/b7b87a74f7ff56c93ca380e99a5d4f00/10959333"  />
+          <figcaption>The Walking Dead Game</figcaption>
         </figure>
+
       </div>
     </section>
 
@@ -94,10 +95,11 @@ Select ONE Additional Feature to Add
               .slideDown("slow")
               .animate({ paddingLeft: "24px", fontSize: "26px" }, 400);
           } else {
-            $("#donut-text").text("naw dawg, try again);
+            $("#donut-text").text("naw dawg, try again");
             $("#donut-result")
               .css("background-color", "#ffd4d4")
-              .slideDown("slow");
+              .slideDown("slow")
+              .animate({ paddingLeft: "24px", fontSize: "26px" }, 400);
           }
         });
 
@@ -116,8 +118,9 @@ Select ONE Additional Feature to Add
           } else {
             $("#hubby-text").text("like yes, but not the right yes, try again");
             $("#hubby-result")
-              .css({ width: "80%", opacity: 0, display: "block", backgroundColor: "#fff5b8" })
-              .animate({ width: "100%", opacity: 1 }, 800);
+              .css("background-color", "#fff5b8")
+              .slideDown("slow")
+              .animate({ fontSize: "28px" }, 600);
           }
         });
       });
