@@ -23,7 +23,7 @@ Select ONE Additional Feature to Add
   <body>
     <h1>Quiz About [Me]</h1>
     <hr />
-    <!-- Movie Question -->
+  
     <form id="donut-form">
       <label>
          What is my favorite thing to munch?
@@ -39,8 +39,7 @@ Select ONE Additional Feature to Add
     <div id="donut-result" class="result-box">
       <p id="donut-text"></p>
     </div>
-    <hr />
-    <!-- Book Question -->
+  
     <form id="hubby-form">
       <label>
         Who's my husband?
@@ -57,6 +56,25 @@ Select ONE Additional Feature to Add
       <p id="hubby-text"></p>
     </div>
 
+    <form id="wifey-form">
+      <label>
+        The pinacle of my entire existence?
+        <select id="wifey-answer">
+          <option value="wifey1">Apple Jack</option>
+          <option value="wifey2">Vi</option>
+          <option value="wifey3">hudson williams</option>
+          <option value="wifey4">Lee (TWDG)</option>
+        </select>
+      </label>
+      <button type="submit">Check Wifey Answer</button>
+    </form>
+    <div id="wifey-result" class="result-box">
+      <p id="wifey-text"></p>
+    </div>
+    <hr />
+
+    <section class="images">
+    <section class="images">
     <section class="images">
       <h2>Three Things I Love</h2>
       <div class="image-grid">
@@ -81,6 +99,7 @@ Select ONE Additional Feature to Add
       $(document).ready(function () {
         $("#donut-result").hide();
         $("#hubby-result").hide();
+        $("#wifey-result").hide();
         
         $("#donut-form").on("submit", function (event) {
           event.preventDefault();
@@ -118,6 +137,28 @@ Select ONE Additional Feature to Add
           } else {
             $("#hubby-text").text("like yes, but not the right yes, try again");
             $("#hubby-result")
+              .css("background-color", "#fff5b8")
+              .slideDown("slow")
+              .animate({ fontSize: "28px" }, 600);
+
+
+          }
+        });
+
+        $("#wifey-form").on("submit", function (event) {
+          event.preventDefault();
+
+          var $answer = $("#wifey-answer");
+          var answer = $answer.val();
+
+          if (answer === "wifey2") {
+            $("#wifey-text").text("Trick question, lowk all of them");
+            $("#wifey-result")
+              .css({ width: "60%", opacity: 0, display: "block", backgroundColor: "#d1ffd6" })
+              .animate({ width: "100%", opacity: 1 }, 800);
+          } else {
+            $("#wifey-text").text("Trick question, lowk all of them");
+            $("#wifey-result")
               .css("background-color", "#fff5b8")
               .slideDown("slow")
               .animate({ fontSize: "28px" }, 600);
